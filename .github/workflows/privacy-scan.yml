@@ -1,0 +1,23 @@
+name: privacy-scan
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  scan:
+    name: 扫描仓库隐私风险
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 用本仓库自带的扫描器检查自己 (自举)
+      # 无 BLOCKER 时退出码为 0, 有 BLOCKER 时为 1, 直接让 CI 失败
+      - name: Run privacy scan
+        run: python scripts/privacy_scan.py . --quiet

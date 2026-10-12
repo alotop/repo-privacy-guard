@@ -1,0 +1,38 @@
+# config.example.yaml — 提交到仓库的示例配置
+# 复制为 config.yaml 后填入真实值；config.yaml 不会被提交（见 .gitignore）。
+# 原则：键名与结构保持完整，值全部替换为占位符。
+
+app:
+  name: your-app
+  env: development
+  port: 8000
+  debug: true
+
+database:
+  scheme: postgresql
+  host: localhost
+  port: 5432
+  name: your_db
+  user: your_username
+  password: your_password
+
+cache:
+  host: localhost
+  port: 6379
+  db: 0
+
+storage:
+  # 使用相对路径或环境变量，禁止写本机绝对路径
+  data_dir: ./data
+  upload_dir: ./uploads
+
+security:
+  jwt_secret: YOUR_SECRET_HERE
+  token_ttl: 3600
+  allowed_origins:
+    - http://localhost:3000
+
+logging:
+  level: info
+  # 日志目录用相对路径
+  file: ./logs/app.log

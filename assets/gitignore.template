@@ -1,0 +1,38 @@
+# === 隐私与本地配置 (repo-privacy-guard) ===
+# 本地测试与私有数据：整目录忽略
+local/
+
+# 环境变量：忽略真实文件，放行示例
+.env
+.env.*
+!.env.example
+
+# 配置：忽略真实文件，放行示例
+config.yaml
+config.*.yaml
+!config.example.yaml
+config.json
+config.*.json
+!config.example.json
+
+# 凭据：忽略真实文件，放行示例
+credentials.*
+!credentials.example.*
+.credentials
+
+# 私钥与证书
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa
+id_ed25519
+
+# 日志与系统文件
+*.log
+logs/
+.DS_Store
+Thumbs.db
+# === end repo-privacy-guard ===

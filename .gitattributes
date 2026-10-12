@@ -1,0 +1,8 @@
+# 统一换行符为 LF, 避免脚本/配置在 Windows 上产生 CRLF 污染
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
+*.zip binary
